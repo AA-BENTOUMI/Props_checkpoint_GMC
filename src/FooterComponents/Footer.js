@@ -3,10 +3,10 @@ import "./Footer.css"
 const Footer = () => {
     return (
       <div>
-        {/* Site footer */}
+        
         <footer className="site-footer">
           <div className="container">
-            <div className="row" className="footer-display">
+            <div className="row" >
               <div className="col-sm-8 col-md-4" style={{ width: "50%" }}>
                 <h6>About</h6>
                 <p className="text-justify">
@@ -23,22 +23,22 @@ const Footer = () => {
                 <h6>Categories</h6>
                 <ul className="footer-links">
                   <li>
-                    <a href="">C</a>
+                    <a href="/#">C</a>
                   </li>
                   <li>
-                    <a href="">UI Design</a>
+                    <a href="/#">UI Design</a>
                   </li>
                   <li>
-                    <a href="">PHP</a>
+                    <a href="/#">PHP</a>
                   </li>
                   <li>
-                    <a href="">Java</a>
+                    <a href="/#">Java</a>
                   </li>
                   <li>
-                    <a href="">Android</a>
+                    <a href="/#">Android</a>
                   </li>
                   <li>
-                    <a href="">Templates</a>
+                    <a href="/#">Templates</a>
                   </li>
                 </ul>
               </div>
@@ -46,16 +46,16 @@ const Footer = () => {
                 <h6>Quick Links</h6>
                 <ul className="footer-links">
                   <li>
-                    <a href="">About Us</a>
+                    <a href="/#">About Us</a>
                   </li>
                   <li>
-                    <a href="">Contact Us</a>
+                    <a href="/#">Contact Us</a>
                   </li>
                   <li>
-                    <a href="">Contribute</a>
+                    <a href="/#">Contribute</a>
                   </li>
                   <li>
-                    <a href="">Privacy Policy</a>
+                    <a href="/#">Privacy Policy</a>
                   </li>
                   <li>
                     <a href="http://scanfcode.com/sitemap/">Sitemap</a>
@@ -70,28 +70,28 @@ const Footer = () => {
               <div className="col-md-8 col-sm-6 col-xs-12">
                 <p className="copyright-text">
                   Copyright © 2017 All Rights Reserved by
-                  <a href="#">Scanfcode</a>.
+                  <a href="/#">Scanfcode</a>.
                 </p>
               </div>
               <div className="col-md-4 col-sm-6 col-xs-12">
                 <ul className="social-icons">
                   <li>
-                    <a className="facebook" href="#">
+                    <a className="facebook" href="/#">
                       <i className="fa fa-facebook" />
                     </a>
                   </li>
                   <li>
-                    <a className="twitter" href="#">
+                    <a className="twitter" href="/#">
                       <i className="fa fa-twitter" />
                     </a>
                   </li>
                   <li>
-                    <a className="dribbble" href="#">
+                    <a className="dribbble" href="/#">
                       <i className="fa fa-dribbble" />
                     </a>
                   </li>
                   <li>
-                    <a className="linkedin" href="#">
+                    <a className="linkedin" href="/#">
                       <i className="fa fa-linkedin" />
                     </a>
                   </li>

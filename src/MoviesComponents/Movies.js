@@ -1,70 +1,60 @@
-import React from 'react'
+import React from "react";
 import "./Movies.css";
+import Rating from "@material-ui/lab/Rating";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginLeft: "38%",
+    display: "flex",
+    flexDirection: "column",
+    "& > * + *": {
+      marginTop: theme.spacing(1),
+    },
+  },
+}));
 const Movies = ({ Data, handleName }) => {
+  const classes = useStyles();
+  /*********** display list  movies   **********************/
   return (
-    <div onClick={() => handleName(Data.name)}>
+    <div>
       <div className="wrapper">
-        <div className="main_card">
+        <div className="main_card" onClick={() => handleName(Data.name)}>
           <div className="card_left">
             <div className="card_datails">
               <h1>{Data.name}</h1>
               <div className="card_cat">
-                <p className="PG">PG - 13</p>
-                <p className="year">{Data.date}</p>
+                <p className="year">{Data.rating}</p>
                 <p className="genre">{Data.type}</p>
-                <p className="time">2h 28m</p>
+                <p className="time">{Data.date}</p>
               </div>
               <p className="disc">{Data.description}</p>
-              <a href="https://www.imdb.com/title/tt4912910/" target="_blank">
+              <a href="https://www.imdb.com/title/tt4912910/" alt="imagemovies">
                 Read More
               </a>
               <div className="social-btn">
-                {/* WATCH TRAILER*/}
-                <button>
-                  <i className="fas fa-play" /> SEE TRAILER
-                </button>
-                {/* GET*/}
-                <button>
-                  <i className="fas fa-download" /> DOWNLOAD
-                </button>
-                {/*USERS RATINGS*/}
-                <button>
-                  <i className="fas fa-thumbs-up" /> 97%
-                </button>
-                {/*BOOKMARK*/}
-                <button>
-                  <i className="fas fa-star" />
-                  {Data.rating}
-                </button>
+                <div>
+                  <div className={classes.root}>
+                    <Rating name="size-medium" value={parseInt(Data.rating)} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="card_right">
             <div className="img_container">
-              <img src={Data.image} alt="movies" />
+              <img src={Data.image} alt={Data.name} />
             </div>
-            <div className="play_btn">
-              <a href={Data.image} target="_blank" alt="movies">
-                <i className="fas fa-play-circle" />
-              </a>
-            </div>
+            <div className="play_btn"></div>
           </div>
         </div>
       </div>
     </div>
-    // <div>
-    //   <h1>data from Movies Componenets</h1>
-    //   <p>{Data.image}</p>
-    //   <p>{Data.name}</p>
-    //   <p>{Data.date}</p>
-    //   <p>{Data.type}</p>
-    //   <p>{Data.description}</p>
-    // </div>
   );
 };
 
 export default Movies;
-
+/***********  default Props  **********************/
 Movies.defaultProps = {
   Data: {
     id: Math.random(),

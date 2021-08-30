@@ -1,17 +1,27 @@
-import React from 'react'
+import React from "react";
 import Movies from "./Movies";
 
-const MoviesCards = ({ Data, }) => {
+const MoviesCards = ({ list, searchedhWord, rateStars }) => {
   const handleName = (name) => alert(`this Movie's name is ${name}`);
-    return (
+
+  return (
+    <div>
       <div>
-        <div>
-          {Data.map((el, i) => (
-            <Movies Data={el} key={i} handleName={handleName} />
+        {list
+          .filter((movie) =>
+            movie.name
+              ? movie.name
+                  .toLowerCase()
+                  .includes(searchedhWord.toLowerCase()) &&
+                movie.rating >= rateStars
+              : list
+          )
+          .map((el, i) => (
+            <Movies Data={el} key={el.id} handleName={handleName} />
           ))}
-        </div>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default MoviesCards;
