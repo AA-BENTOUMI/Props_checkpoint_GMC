@@ -2,7 +2,7 @@ import React from "react";
 import "./Movies.css";
 import Rating from "@material-ui/lab/Rating";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginLeft: "38%",
@@ -13,37 +13,66 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Movies = ({ Data, handleName }) => {
+const Movies = ({
+  Data: { id, name, date, type, description, image, rating, trailer },
+  handleName,
+}) => {
   const classes = useStyles();
   /*********** display list  movies   **********************/
   return (
     <div>
       <div className="wrapper">
-        <div className="main_card" onClick={() => handleName(Data.name)}>
+        <div
+          className="main_card"
+          // onClick={() => handleName(Data.name)
+        >
           <div className="card_left">
             <div className="card_datails">
-              <h1>{Data.name}</h1>
+              <h1>{name}</h1>
               <div className="card_cat">
-                <p className="year">{Data.rating}</p>
-                <p className="genre">{Data.type}</p>
-                <p className="time">{Data.date}</p>
+                <p className="year">{rating}</p>
+                <p className="genre">{type}</p>
+                <p className="time">{date}</p>
               </div>
-              <p className="disc">{Data.description}</p>
+              <p className="disc">{description}</p>
               <a href="https://www.imdb.com/title/tt4912910/" alt="imagemovies">
                 Read More
               </a>
               <div className="social-btn">
                 <div>
                   <div className={classes.root}>
-                    <Rating name="size-medium" value={parseInt(Data.rating)} />
+                    <Rating name="size-medium" value={parseInt(rating)} />
                   </div>
                 </div>
+                {/* link to the route  */}
+                <Link
+                  to={{
+                    pathname: `/trailer/${id}`,
+                    state: {
+                      Data: {
+                        id,
+                        name,
+                        date,
+                        type,
+                        description,
+                        image,
+                        rating,
+                        trailer,
+                      },
+                    },
+                  }}
+                >
+                  <button>
+                    {" "}
+                    <i className="fas fa-play" /> SEE TRAILER
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
           <div className="card_right">
             <div className="img_container">
-              <img src={Data.image} alt={Data.name} />
+              <img src={image} alt={name} />
             </div>
             <div className="play_btn"></div>
           </div>

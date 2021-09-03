@@ -2,7 +2,7 @@ import React from "react";
 import Movies from "./Movies";
 
 const MoviesCards = ({ list, searchedhWord, rateStars }) => {
-  const handleName = (name) => alert(`this Movie's name is ${name}`);
+  // const handleName = (name) => alert(`this Movie's name is ${name}`);
 
   return (
     <div>
@@ -17,7 +17,11 @@ const MoviesCards = ({ list, searchedhWord, rateStars }) => {
               : list
           )
           .map((el, i) => (
-            <Movies Data={el} key={el.id} handleName={handleName} />
+            <Movies
+              Data={el}
+              key={el.id}
+              // handleName={handleName}
+            />
           ))}
       </div>
     </div>

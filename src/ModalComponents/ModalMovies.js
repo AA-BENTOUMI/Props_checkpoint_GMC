@@ -91,6 +91,16 @@ function ModalMovies({ addItem }) {
             onChange={handleChange}
             autoFocus
             margin="dense"
+            id="trailer"
+            label="trailer"
+            type="text"
+            fullWidth
+            name="trailer"
+          />
+          <TextField
+            onChange={handleChange}
+            autoFocus
+            margin="dense"
             id="description"
             label="Description"
             type="text"
